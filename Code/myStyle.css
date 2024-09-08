@@ -1,0 +1,21 @@
+.Tieu_de {
+    font-weight: bold;
+    color: red; /* Màu mới */
+    font-family: Arial;
+    font-size: 18pt;
+}
+
+.Noi_dung {
+    font-style: italic;
+    color: orange; /* Màu mới */
+    font-family: Arial;
+    font-size: 14pt;
+}
+
+
+/* Style for hyperlinks */
+.Sieu_lien_ket {
+    font-style: italic;
+    text-decoration: none;
+    color: green;
+}
