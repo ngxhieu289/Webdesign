@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thay đổi CSS với JavaScript</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h2>JAVASCRIPT và CSS</h2>
+
+    <!-- Các nút chọn màu -->
+    <button class="button" onclick="doiMau('green')">Xanh</button>
+    <button class="button" onclick="doiMau('red')">Đỏ</button>
+    <button class="button" onclick="doiMau('yellow')">Vàng</button>
+    <button class="button" onclick="doiMau('transparent')">Không màu</button>
+
+    <!-- Các nút chọn kích thước chữ -->
+    <select id="fontSize" onchange="doiCoChu()">
+        <option value="20px">20px</option>
+        <option value="25px">25px</option>
+        <option value="30px">30px</option>
+    </select>
+    <button class="button">Đặt cỡ chữ</button>
+
+    <!-- Các nút chọn chiều cao -->
+    <select id="heightSize" onchange="doiChieuCao()">
+        <option value="100px">100px</option>
+        <option value="150px">150px</option>
+        <option value="200px">200px</option>
+    </select>
+    <button class="button">Đặt chiều cao</button>
+
+    <button class="button" onclick="tangChieuCao()">Tăng chiều cao</button>
+
+    <button class="button" onclick="napCSSTieuDe()">Nạp css tiêu đề</button>
+    <button class="button" onclick="napCSSNoiDung()">Nạp css nội dung</button>
+
+    <div id="NoiDung">#NoiDung: Xin chào các bạn!</div>
+
+    <script src="script.js"></script>
+</body>
+</html>

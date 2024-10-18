@@ -1,0 +1,22 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+h2 {
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+#NoiDung {
+    border: 1px solid black;
+    padding: 10px;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.button {
+    margin: 5px;
+    padding: 5px;
+    font-size: 14px;
+}
