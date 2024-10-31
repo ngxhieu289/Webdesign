@@ -19,12 +19,35 @@
             align-items: center;
             min-height: 100vh;
             padding: 20px;
+            position: relative;
         }
+        .header {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            display: flex;
+            align-items: center;
+            z-index: 1000;
+        }
+        .logo {
+            width: 80px;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+        .title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #4b6cff;
+            margin-left: 15px;
+            transition: opacity 0.3s ease;
+        }
+        /* Cấu trúc chính */
         .container {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 20px;
             width: 80%;
+            margin-top: 100px; /* Để không bị chồng với header */
         }
         .member-card {
             background: linear-gradient(135deg, #6a11cb, #2575fc);
@@ -38,6 +61,9 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             position: relative;
             overflow: hidden;
+            background-size: 200% 200%;
+            animation: gradientAnimation 5s ease infinite;
+            border: 2px solid transparent;
         }
         .member-card:hover {
             transform: translateY(-8px);
@@ -60,15 +86,6 @@
         .member-info h2 {
             font-size: 20px;
             margin-bottom: 5px;
-        }
-        /* Đặt logo ở góc trên bên trái */
-        .logo {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            width: 100px;
-            height: auto;
-            z-index: 1000;
         }
         /* Trang chi tiết thành viên */
         .member-details {
@@ -115,8 +132,11 @@
     </style>
 </head>
 <body>
-    <!-- Logo góc trái -->
-    <img src="https://cdn.haitrieu.com/wp-content/uploads/2021/11/Logo-DH-Thu-Do-Ha-Noi-HNMU.png" alt="Logo Trường Đại học Thủ Đô Hà Nội" class="logo">
+    <!-- Logo và tiêu đề -->
+    <div class="header">
+        <img src="https://cdn.haitrieu.com/wp-content/uploads/2021/11/Logo-DH-Thu-Do-Ha-Noi-HNMU.png" alt="Logo Trường Đại học Thủ Đô Hà Nội" class="logo">
+        <div class="title">TRƯỜNG ĐẠI HỌC THỦ ĐÔ HÀ NỘI</div>
+    </div>
 
     <div class="container">
         <div class="member-card" onclick="openMemberPage('member1')">
@@ -126,13 +146,13 @@
             </div>
         </div>
         <div class="member-card" onclick="openMemberPage('member2')">
-            <img src="member2.jpg" alt="Ảnh thành viên 2" class="member-img">
+            <img src="hieu.jpg" alt="Ảnh thành viên 2" class="member-img">
             <div class="member-info">
                 <h2>Nguyễn Xuân Hiếu</h2>
             </div>
         </div>
         <div class="member-card" onclick="openMemberPage('member3')">
-            <img src="member3.jpg" alt="Ảnh thành viên 3" class="member-img">
+            <img src="thang.jpg" alt="Ảnh thành viên 3" class="member-img">
             <div class="member-info">
                 <h2>Phùng Viết Thắng</h2>
             </div>
@@ -145,8 +165,8 @@
                 member1: {
                     name: 'Bùi Thanh Tùng',
                     dob: '07/05/2005',
-                    studentId: 'SV001',
-                    hometown: 'Hà Nội',
+                    studentId: '223001809',
+                    hometown: 'Ba Đình, Hà Nội',
                     hobbies: 'Đọc sách, chơi bóng đá',
                     goals: 'Trở thành lập trình viên chuyên nghiệp',
                     img: 'member1.jpg'
@@ -154,20 +174,20 @@
                 member2: {
                     name: 'Nguyễn Xuân Hiếu',
                     dob: '28/09/2005',
-                    studentId: 'SV002',
-                    hometown: 'Hải Phòng',
-                    hobbies: 'Nghe nhạc, du lịch',
+                    studentId: '223001727',
+                    hometown: 'Thanh Trì, Hà Nội',
+                    hobbies: 'Du lịch, chơi thể thao',
                     goals: 'Phát triển kỹ năng AI và ML',
-                    img: 'member2.jpg'
+                    img: 'hieu.jpg'
                 },
                 member3: {
                     name: 'Phùng Viết Thắng',
                     dob: '05/07/2005',
-                    studentId: 'SV003',
-                    hometown: 'Đà Nẵng',
+                    studentId: '223001792',
+                    hometown: 'Hạ Long, Quảng Ninh',
                     hobbies: 'Chơi game, xem phim',
-                    goals: 'Trở thành nhà phát triển game',
-                    img: 'member3.jpg'
+                    goals: 'Trở thành shipper số 1 Việt Nam',
+                    img: 'thang.jpg'
                 }
             };
             const memberInfo = info[member];
